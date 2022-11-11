@@ -6,7 +6,7 @@
 /*   By: rlarabi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 16:47:55 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/11/10 21:38:05 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/11/11 12:07:03 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_update(char *reserve)
 		free(reserve);
 		return (NULL);
 	}
-	new = malloc(ft_strlen(reserve) - i + 1);
+	new = malloc(ft_strlen(reserve) - i);
 	if (!new)
 		return (NULL);
 	j = 0;
@@ -76,7 +76,7 @@ char	*remplire(int fd, char *reserve)
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
-	buffer[0] = 0;
+	buffer[0] = '\0';
 	while (end_line(buffer))
 	{
 		i = read(fd, buffer, BUFFER_SIZE);
